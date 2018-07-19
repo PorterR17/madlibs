@@ -1,12 +1,20 @@
+@mixin button {
+		height: 50px;
+		width: 300px;
+		border-radius: 4px;
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+		color: white;
+		font-family: 'Montserrat';
+		font-size: 22px;
+		text-align: center;
+}
+
 .home
 {
 	position: relative;
-
 	background-color: rgba(207, 207, 207, 0.06);
 	display: grid;
-
 	justify-items: center;
-
 	grid-template-rows: [header-s] 218px [header-e card-s] minmax(736px, 994px) [card-e];
 }
 
@@ -19,7 +27,6 @@
 	&__skew {
 		-webkit-clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 50%);
 		clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 50%);
-
 		z-index: -10;
 		top: 0;
 		left: 0;
@@ -33,7 +40,6 @@
 	&__border {
 		-webkit-clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 50%);
 		clip-path: polygon(0 48%, 100% 23%, 100% 25%, 0 50%);
-
 		z-index: -10;
 		top: 0;
 		left: 0;
@@ -66,7 +72,6 @@
 	width: 1240px;
 	box-shadow: 0 4px 30px 0 rgba(0,0,0,.06);
 	border-radius: 7px;
-
 	display:grid;
 	grid-template-rows: 1fr 50px;
 	background-color: white;
@@ -84,6 +89,25 @@
 		justify-items: center;
 		align-items: center;
 	}
+
+	button:focus {
+		outline: none;
+	}
+
+	button {
+		justify-self: center;
+	}
+
+	&__generate {
+		background-color: #00CB79;	
+		@include button;	
+	}
+
+	&__clear {
+		background-color: #45B0E5;	
+		@include button;	
+	}
+
 }
 
 .input {
